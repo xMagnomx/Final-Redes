@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GunController : MonoBehaviour
+public class GunController : Photon.PunBehaviour
 {
 	public Transform weaponHold;
 	public Gun startingGun;

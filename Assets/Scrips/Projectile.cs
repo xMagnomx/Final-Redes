@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Projectile : MonoBehaviour
+public class Projectile : Photon.PunBehaviour
 {
 	public float speed = 10;
-    public float DieBullet;
+    float DieBullet;
 
 	public void SetSpeed(float newSpeed)
 	{
@@ -16,8 +16,8 @@ public class Projectile : MonoBehaviour
     {
 		transform.Translate(Vector3.forward * Time.deltaTime * speed);
 
-        DieBullet++;
-        if (DieBullet > 300)
+		DieBullet += Time.deltaTime;
+        if (DieBullet > 3)
             Destroy(this.gameObject);
     }
 }
