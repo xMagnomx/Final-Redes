@@ -44,7 +44,7 @@ public class PlayerController : Photon.PunBehaviour
 
 		if (Input.GetMouseButton(0))
 		{
-			//disparar
+			_owner.Shoot();
 		}
 	}
 }
