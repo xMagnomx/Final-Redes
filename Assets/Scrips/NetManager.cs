@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class NetManager : Photon.PunBehaviour
 {
-    // Start is called before the first frame update
+    
     void Start()
     {
 		PhotonNetwork.ConnectUsingSettings("v1.0");
@@ -35,7 +35,7 @@ public class NetManager : Photon.PunBehaviour
 	{
 		print("me joinee");
 		PhotonNetwork.Instantiate("Pj",Vector3.zero,Quaternion.identity,0);
-	}
+    }
 	// Update is called once per frame
 	void Update()
     {
