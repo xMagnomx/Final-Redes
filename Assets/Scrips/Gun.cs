@@ -16,8 +16,10 @@ public class Gun : Photon.PunBehaviour
 		if (Time.time > nextShotTime)
 		{
 			nextShotTime = Time.time + msBetweenShots / 1000;
-			//Projectile newProjectile = PhotonNetwork.Instantiate("bullet", muzzle.position, muzzle.rotation,0);
-			//newProjectile.SetSpeed(muzzleVelocity);
+
+			var newProjectile = PhotonNetwork.Instantiate("bullet", muzzle.position, muzzle.rotation,0);
+
+			newProjectile.GetComponent<Projectile>().SetSpeed(muzzleVelocity);
 		}
 	}
 }
