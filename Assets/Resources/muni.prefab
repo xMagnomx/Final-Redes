@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 622127135423860957}
   - component: {fileID: 3503198067909865737}
   - component: {fileID: 4041995059497932596}
+  - component: {fileID: -8605221757541540588}
   m_Layer: 0
   m_Name: muni
   m_TagString: Untagged
@@ -200,3 +201,15 @@ MonoBehaviour:
     InterpolateOption: 0
     InterpolateMoveTowardsSpeed: 1
     InterpolateLerpSpeed: 0
+--- !u!114 &-8605221757541540588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5640294375124332990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da172bd2b1af7004a9d954e25da383d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
