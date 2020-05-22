@@ -4,20 +4,38 @@ using UnityEngine;
 
 public class Projectile : Photon.PunBehaviour
 {
-	public float speed = 10;
-    float DieBullet;
+	float _speed;
+	int _dmg;
+
+	Rigidbody _rb;
+
+	private void Start()
+	{
+		_rb = GetComponent<Rigidbody>();
+		GameObject.Destroy(this.gameObject, 3);
+	}
 
 	public void SetSpeed(float newSpeed)
 	{
-		speed = newSpeed;
+		_speed = newSpeed;
 	}
 
-    void Update()
-    {
-		transform.Translate(Vector3.forward * Time.deltaTime * speed);
+	public void SetDmg(int newDmg)
+	{
+		_dmg = newDmg;
+	}
 
-		DieBullet += Time.deltaTime;
-        if (DieBullet > 3)
-            Destroy(this.gameObject);
-    }
+	private void FixedUpdate()
+	{
+		_rb.velocity = this.transform.forward * _speed * Time.fixedDeltaTime;
+	}
+
+	private void OnTriggerEnter(Collider other)
+	{
+		GameObject.Destroy(this.gameObject);
+		if (other.gameObject.GetComponent<Character>())
+		{
+			other.gameObject.GetComponent<Character>().TakeDmg(_dmg);
+		}
+	}
 }

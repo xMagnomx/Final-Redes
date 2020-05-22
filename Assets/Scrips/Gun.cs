@@ -8,6 +8,7 @@ public class Gun : Photon.PunBehaviour
 	public Projectile projectile;
 	public float msBetweenShots = 100;
 	public float muzzleVelocity = 35;
+	public int dmgBullet=1;
 
 	float nextShotTime;
 
@@ -17,9 +18,9 @@ public class Gun : Photon.PunBehaviour
 		{
 			nextShotTime = Time.time + msBetweenShots / 1000;
 
-			var newProjectile = PhotonNetwork.Instantiate("bullet", muzzle.position, muzzle.rotation,0);
-
-			newProjectile.GetComponent<Projectile>().SetSpeed(muzzleVelocity);
+			Projectile newProjectile = Instantiate(projectile, muzzle.position, muzzle.rotation);
+			newProjectile.SetSpeed(muzzleVelocity);
+			newProjectile.SetDmg(dmgBullet);
 		}
 	}
 }

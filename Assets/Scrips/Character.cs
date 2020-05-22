@@ -5,7 +5,11 @@ using UnityEngine;
 public class Character : Photon.PunBehaviour
 {
 	public int life;
+	public int maxLife;
+
 	public float speed;
+
+	public HealthBar healthbar;
 
 	GunController gunController;
 
@@ -14,6 +18,10 @@ public class Character : Photon.PunBehaviour
 
 	void Start()
 	{
+
+		life = maxLife;
+		healthbar.SetMaxHealth(maxLife);
+
 		_rb = GetComponent<Rigidbody>();
 		gunController = GetComponent<GunController>();
 	}
@@ -39,6 +47,18 @@ public class Character : Photon.PunBehaviour
 	public void Shoot()
 	{
 		gunController.ShootFire();
+	}
+
+	[PunRPC]
+	public void TakeDmgRpc()
+	{
+		TakeDmg(1);
+	}
+
+	public void TakeDmg(int dmg)
+	{
+		life -= dmg;
+		healthbar.SetHealth(life);
 	}
 
 	void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)

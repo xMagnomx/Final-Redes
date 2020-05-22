@@ -44,9 +44,8 @@ public class PlayerController : Photon.PunBehaviour
 
 		if (Input.GetMouseButton(0))
 		{
-			_owner.Shoot();
+			photonView.RPC("Shoot", PhotonTargets.All);
 		}
 
-        photonView.RPC("OnTriggerEnter", PhotonTargets.All);
 	}
 }

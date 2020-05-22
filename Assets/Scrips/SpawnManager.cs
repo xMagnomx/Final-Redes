@@ -20,7 +20,7 @@ public class SpawnManager : Photon.PunBehaviour
         {
             print("spanw");
 
-			PhotonNetwork.Instantiate("muni", wayPoint[Random.Range(0, wayPoint.Count)].transform.position, Quaternion.identity, 0);
+			//PhotonNetwork.Instantiate("muni", wayPoint[Random.Range(0, wayPoint.Count)].transform.position, Quaternion.identity, 0);
 
 			seconds = 0;
         }
