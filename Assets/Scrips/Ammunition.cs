@@ -15,11 +15,21 @@ public class Ammunition : Photon.PunBehaviour
     {
         
     }
-    [PunRPC]
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player")
+        {
             //tiene que da municion
-            Destroy(gameObject);
+            //photonView.RPC("OnTriggerEnter", PhotonTargets.All, other.gameObject);
+            PhotonNetwork.
+            Destroy(this.gameObject);
+
+        }
+
+    }
+    [PunRPC]
+    void fjjffj()
+    {
+
     }
 }
