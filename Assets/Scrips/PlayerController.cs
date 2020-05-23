@@ -47,6 +47,7 @@ public class PlayerController : Photon.PunBehaviour
 			_owner.Shoot();
 		}
 
-        photonView.RPC("OnTriggerEnter", PhotonTargets.All);
-	}
+        
+
+    }
 }

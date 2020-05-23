@@ -21,7 +21,7 @@ public class Character : Photon.PunBehaviour
 
     void Update()
     {
-        
+        //photonView.RPC("OnTriggerEnter", PhotonTargets.All);
     }
 
 	public void Move(Vector3 dir)

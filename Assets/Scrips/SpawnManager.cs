@@ -16,7 +16,7 @@ public class SpawnManager : Photon.PunBehaviour
     {
         seconds += Time.deltaTime;
 
-		if (seconds > 3)
+		if (seconds > 15)
         {
             print("spanw");
 
